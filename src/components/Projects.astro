@@ -1,0 +1,30 @@
+---
+import Badge from "./Badge.astro"
+interface Props {
+  Title: string,
+  Description: string;
+  Image: { src: string }; // Asegurando que Image sea un objeto con la propiedad src de tipo string
+  Status: string;
+}
+const { Title, Description, Image, Status } = Astro.props;
+
+let Live:boolean=false
+
+if(Status==='Live'){
+Live=true
+}
+---
+
+<div class="flex flex-row items-center justify-center text-white rounded-xl p-2 w-[1485px] h-auto "  style="box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);">
+    <div class="flex flex-col p-6">
+      <h1 class="mb-4 text-2xl font-bold">{Title}</h1>
+      <p class="mb-4 text-left">{Description}</p>
+    </div>{
+        Live?(<Badge class="bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">{Status}</Badge>)
+        :<Badge class="bg-red-100 text-red-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-red-900 dark:text-red-300">{Status}</Badge>
+ 
+    }
+   
+    <img src={Image.src} alt="Foto Proyecto" class="w-1/2 h-64 object-cover" /> 
+    {/* Ajuste aquí: w-1/2 para ocupar la mitad en el eje x */}
+  </div>

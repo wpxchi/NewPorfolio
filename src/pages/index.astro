@@ -1,0 +1,115 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Badge from '../components/Badge.astro'
+import Linkedin from '../components/icons/Linkedin.astro'
+import Instagram from '../components/icons/Instagram.astro'
+import Email from '../components/icons/Email.astro'
+import Github from '../components/icons/Github.astro'
+import React from '../components/icons/React.astro'
+import Redux from '../components/icons/Redux.astro'
+import Javascript from '../components/icons/Javascript.astro'
+import Css from '../components/icons/Css.astro'
+import Tailwind from '../components/icons/Tailwind.astro'
+import Node from '../components/icons/Node.astro'
+import Stro from '../components/icons/stro.astro'
+import PostgreSql from '../components/icons/PostgreSql.astro'
+import SocialBadges from '../components/SocialBadges.astro'
+import Projects from '../components/Projects.astro';
+import FotoEventox from '../components/Images/554shots_so.png'
+import FotoPokemon from '../components/Images/775shots_so.png'
+import PhotoFace from '../components/Images/PhotoFace.jpeg'
+
+const project = [
+    {
+        Title: 'Pokemon API',
+        Description: `
+		PI Pokemons is a web platform showcasing Pokemon cards, offering users an interactive space to learn and create their own cards. As a Full Stack developer, I implemented technologies like React, Redux, JavaScript, CSS, Node.js, and PostgreSQL for seamless integration, providing a comprehensive user experience.
+        `,
+		Image: FotoPokemon,
+		Status:'Live'
+		
+    },
+	{Title: 'Evento X',
+        Description: `
+		EventoX is a modern platform for creating and selling events. Users can explore, purchase, and create events with an intuitive interface and secure MercadoPago payment system. As a Front End Developer, I focused on integration, bug reviews, and maintenance, ensuring a smooth and reliable user experience.
+`,
+		Image: FotoEventox,
+		Status:'Dead'
+}
+];
+---
+
+<Layout title="Portfolio of Uriel Castillo, a FullStack developer graduated from SoyHenry academy."
+        description=
+		"Bring on board Uriel Castillo, a skilled and experienced web developer for your team.">
+	<main>
+		<section id="home" class="w-full lg:w-[740px] mx-auto py-44 text-white">
+		<h1 class="text-5xl font-bold flex flex-row gap-x-4 pb-10 justify-center">Hi 👋, I'm Uriel Castillo 
+			<div class="flex justify-center items-center"><Badge class="bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">open to work</Badge></h1></div>
+		<h2 class="text-xl opacity-60 text-wrap">I am a 19-year-old full-stack developer from Argentina, 
+			a proud graduate of SoyHenry 🚀.
+			My expertise lies in the development of web applications.</h2>
+		<nav class="flex gap-x-2 justify-center">
+			<SocialBadges href="https://www.linkedin.com/in/uriel-castillo-b782b0270/"><Linkedin/ class="size-6"></SocialBadges>
+			<SocialBadges href="https://github.com/wpxchi"><Github/ class="size-6"></SocialBadges>
+			<SocialBadges href="mailto:urielcastillo891@gmail.com"><Email/ class="size-6"></SocialBadges>
+			<SocialBadges href="https://www.instagram.com/pxccchi/"><Instagram/ class="size-6"></SocialBadges>
+		</nav>
+	</section>
+
+	<section id="projects" class="mt-2 flex flex-col items-center">
+		<h3 class="text-3xl font-bold mb-20 text-white ">Projects</h3>
+		<nav class="grid grid-cols-1 gap-10 mb-28">
+		  {project.map(project => (
+			<Projects 
+			  Title={project.Title} 
+			  Description={project.Description} 
+			  Image={project.Image}
+			  Status={project.Status}   
+			/>
+		  ))}
+		</nav>
+	</section>
+
+	<article id="about" class="mt-2 flex flex-col items-center mb-40">
+		<h3 class="text-3xl font-bold mb-8 text-white">About Me</h3>
+	  
+		<div class="flex flex-col items-center justify-center text-white rounded-xl p-8 w-[800px] md:w-[1000px] lg:w-[1200px] h-auto transform transition-transform duration-500 ease-in-out" style="box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);">
+		  <div class="overflow-hidden rounded-full w-32 h-32 mb-4">
+			<img src={PhotoFace.src} alt="Mi Foto" class="w-full h-full object-cover" />
+		  </div>
+	  
+		  <div class="flex flex-col items-center">
+			<p class="mb-4 text-left text-lg opacity-80">My fascination with programming goes beyond the code. I'm driven by the potential to transform big ideas into innovative and accessible solutions that improve people's lives. 🌟💻
+	  
+			  My focus on FullStack development has equipped me with solid skills in both frontend and backend, allowing me to create comprehensive and functional web experiences. 💡 I enjoy tackling technological challenges and always seek ways to optimize and enhance the efficiency of my projects. 🛠️
+	  
+			  What inspires me in this field is the ability to create tools and platforms that simplify everyday tasks and offer creative solutions. During my time at Henry, I've had the opportunity to work on exciting projects ranging from practical applications to innovative websites. 🚀🌐
+	  
+			  I'm eager to continue learning and growing in this dynamic tech world. My goal is to keep developing skills and knowledge, collaborate with passionate teams, and contribute to projects that have a positive impact on people's lives. 📚🌍</p>
+	  
+			<nav class="flex flex-col items-center gap-y-4 mt-4">
+			  <h5 class="text-white text-lg font-bold mb-2">My Technologies</h5>
+			  <div class="flex gap-x-2">
+				<SocialBadges><React class="size-6"></SocialBadges>
+				<SocialBadges><Redux class="size-6"></SocialBadges>
+				<SocialBadges><Javascript class="size-6"></SocialBadges>
+				<SocialBadges><Css class="size-6"></SocialBadges>
+				<SocialBadges><Tailwind class="size-6"></SocialBadges>
+				<SocialBadges><Node class="size-6"></SocialBadges>
+				<SocialBadges><PostgreSql class="size-6"></SocialBadges>
+				<SocialBadges><Stro class="size-6"></SocialBadges>
+			  </div>
+			</nav>
+		  </div>
+		</div>
+	  </article>
+	  
+	  
+	  
+	  <footer class="bg-gray-800 text-white py-4 text-center">
+		<p class="text-sm opacity-70">&copy; 2024 Uriel Castillo. All rights reserved.</p>
+	  </footer>
+	</main>
+</Layout>
+
