@@ -26,24 +26,28 @@ const project = [
 		PI Pokemons is a web platform showcasing Pokemon cards, offering users an interactive space to learn and create their own cards. As a Full Stack developer, I implemented technologies like React, Redux, JavaScript, CSS, Node.js, and PostgreSQL for seamless integration, providing a comprehensive user experience.
         `,
 		Image: FotoPokemon,
-		Status:'Live'
-		
+		Status:'Live',
+	Domain:''
     },
 	{Title: 'Evento X',
         Description: `
 		EventoX is a modern platform for creating and selling events. Users can explore, purchase, and create events with an intuitive interface and secure MercadoPago payment system. As a Front End Developer, I focused on integration, bug reviews, and maintenance, ensuring a smooth and reliable user experience.
 `,
 		Image: FotoEventox,
-		Status:'Dead'
-}, 
+
+		Status:'Dead',
+	Domain:''
+},
+
 {
         Title: 'Rigth Market Ecommerce',
         Description: `
-		Right Market" is an e-commerce platform that connects sellers and buyers of various products. It provides sellers with a platform to list their products and manage their sales, while buyers can browse a wide variety of items, compare prices, and make purchases securely. Right Market facilitates interaction between sellers and buyers, enabling efficient transactions and satisfactory experiences for both parties. You can view the web here: https://ecommerce-chi-sage.vercel.app/
+		Right Market" is an e-commerce platform that connects sellers and buyers of various products. It provides sellers with a platform to list their products and manage their sales, while buyers can browse a wide variety of items, compare prices, and make purchases securely. Right Market facilitates interaction between sellers and buyers, enabling efficient transactions and satisfactory experiences for both parties. 
         `,
 		Image: FotoEcommerce,
-		Status:'Live'
-		
+		Status:'Live',
+	Domain:'https://ecommerce-chi-sage.vercel.app/'
+
     },
 ];
 ---
@@ -71,11 +75,12 @@ const project = [
 		<nav class="grid grid-cols-1 gap-10 mb-28">
 		  {project.map(project => (
 			<Projects 
-			  Title={project.Title} 
-			  Description={project.Description} 
-			  Image={project.Image}
-			  Status={project.Status}   
-			/>
+    	Title={project.Title} 
+    	Description={project.Description} 
+    	Image={project.Image}
+    	Status={project.Status}
+    	Domain={project.Domain}   
+/>
 		  ))}
 		</nav>
 	</section>

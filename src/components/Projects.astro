@@ -5,8 +5,9 @@ interface Props {
   Description: string;
   Image: { src: string }; // Asegurando que Image sea un objeto con la propiedad src de tipo string
   Status: string;
+  Domain: string;
 }
-const { Title, Description, Image, Status } = Astro.props;
+const { Title, Description, Image, Status, Domain } = Astro.props;
 
 let Live:boolean=false
 
@@ -14,7 +15,7 @@ if(Status==='Live'){
 Live=true
 }
 ---
-
+<a href={Domain} target="_blank" >
 <div class="flex flex-row items-center justify-center text-white rounded-xl p-2 w-[1485px] h-auto "  style="box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);">
     <div class="flex flex-col p-6">
       <h1 class="mb-4 text-2xl font-bold">{Title}</h1>
@@ -28,3 +29,4 @@ Live=true
     <img src={Image.src} alt="Foto Proyecto" class="w-1/2 h-64 object-cover" /> 
     {/* Ajuste aquí: w-1/2 para ocupar la mitad en el eje x */}
   </div>
+</a>
